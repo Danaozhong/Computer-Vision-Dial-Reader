@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base\gauges\gauge.cpp" />
+    <ClCompile Include="base\gauges\helios\gauge_helios.cpp" />
+    <ClCompile Include="base\interfaces\com\interface_com.cpp" />
+    <ClCompile Include="common\misc\cmn_misc.cpp" />
+    <ClCompile Include="common\misc\message.c" />
+    <ClCompile Include="main\data_acquistion.cpp" />
+    <ClCompile Include="main\main.cpp" />
+    <ClCompile Include="main\main_globals.cpp" />
+    <ClCompile Include="main\project.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\math\cmn_math_advanced.hpp" />
+    <ClInclude Include="common\math\cmn_math_basic.h" />
+    <ClInclude Include="common\math\cmn_math_ellipse.h" />
+    <ClInclude Include="common\math\cmn_math_frame.h" />
+    <ClInclude Include="common\math\cmn_math_matrices.h" />
+    <ClInclude Include="common\math\cmn_math_rotation.h" />
+    <ClInclude Include="common\misc\cmn_misc.h" />
+    <ClInclude Include="common\misc\cmn_render_functions.h" />
+    <ClInclude Include="common\misc\message.h" />
+    <ClInclude Include="lib\xml\tinyxml2.h" />
+    <ClInclude Include="main\data_acquisition.h" />
+    <ClInclude Include="main\main.h" />
+    <ClInclude Include="main\main_globals.h" />
+    <ClInclude Include="main\project.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5BB40A68-CB38-4CBC-9794-0C309CF66C29}</ProjectGuid>
+    <RootNamespace>GaugeReader</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(WXWIN)\lib;$(WXWIN)\contrib\lib;$(WXWIN)\lib\vc_lib;E:\Programme\Libraries\TBB\lib\intel64\vc12_ui;E:\Programme\Libraries\Boost\libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\Programme\Libraries\Boost;E:\Programme\Libraries\OpenCV\OpenCV300RC1\opencv\build\include;E:\Programme\Libraries\Eigen;H:\Projekte\2017\GaugeReader;E:\Programme\Libraries\TBB\include;H:\Projekte\2017\GaugeReader\lib\xml;E:\Programme\Libraries\wxWidgets\include;E:\Programme\Libraries\wxWidgets\lib\vc_lib\mswu;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__WXMSW__;_WINDOWS;NOPCH;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;oleacc.lib;odbc32.lib;tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
